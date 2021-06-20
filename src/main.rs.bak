@@ -1,0 +1,46 @@
+mod interaction;
+
+#[macro_use]
+extern crate rocket;
+use log::info;
+use interaction::Person;
+use interaction::{get_record, get_record_str, save_record};
+use rocket_contrib::serve::StaticFiles;
+
+#[get("/submit_data/<name>/<number>/<likes>")]
+fn submit_data(name: String, number: String, likes: String) -> String {
+    let mut record = get_record();
+    let decoded_likes = urlencoding::decode(likes.as_str()).unwrap();
+
+    info!("Data submitted!\n\tname: {}\n\t\n\tnumber: {}\n\tlikes: {}\n\tdecoded likes: {}", name, number, likes, &decoded_likes);
+
+    record.people.push(Person {
+        name,
+        number,
+        likes: serde_json::from_str::<Vec<String>>(
+            &decoded_likes
+        ).unwrap(),
+    });
+
+    save_record(get_record_str(&record)); 
+
+    r#"{"status": "ok"}"#.to_owned()
+}
+
+#[get("/get_data")]
+fn get_data() -> String {
+    let mut data = r#"{"everyone":"#.to_owned();
+    data = data + std::fs::read_to_string("students.json").unwrap().as_str();
+    data = data + r#", "currently":"#;
+    data = data + get_record_str(&get_record()).to_string().as_str();
+    data = data + "}";
+
+    data
+}
+
+#[launch]
+fn rocket() -> _ {
+    rocket::build() 
+        .mount("/", routes![get_data, submit_data])
+        .mount("/", StaticFiles::from("docs")).launch()
+}

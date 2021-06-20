@@ -1,9 +1,3 @@
 {
-    "people": [
-        {
-            "name": "milo banks",
-            "number": "+18012431044",
-            "likes": ["eli hatton", "dylan bookhammer", "ainsley moore", "henry erickson", "isaac granger", "monica esquivas"]
-        }
-    ]
+    "people": []
 }
