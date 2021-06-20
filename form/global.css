@@ -1,0 +1,46 @@
+body {
+    font-family: sans-serif;
+    margin: 5ex 10ex;
+    background-color: rgba(242, 242, 250, 1); /* Things look crisper when blue is added. See Tom Scotts video "what colour is my hoodie?". */
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+
+.form-content {
+    align: center;
+    text-align: center;
+}
+
+select {
+    text-align: center;
+}
+
+.submit-button {
+    margin-top: 150px;
+}
+
+p, div {
+    font-size: 100%;
+    font-family: 'Roboto Light', sans-serif;
+}
+
+h1 {
+    font-family: 'Roboto Bold', sans-serif;
+    font-size: 500%;
+}
+
+h2, h3, h4, h5, h6 {
+    font-size: 200%;
+    font-family: 'Roboto Medium', sans-serif;
+}
+
