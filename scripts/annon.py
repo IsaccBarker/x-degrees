@@ -18,3 +18,19 @@ with open("../database.annon.json", "w") as f:
     f.truncate()
     f.write(json.dumps(str(data), indent=4, sort_keys=True).replace("'", '"').replace('"{', '{').replace('}"', '}'))
 
+
+annon_data=[]
+data=[]
+with open("../students.json", "r") as f:
+    data = json.load(f)
+
+i = 0
+for person in data:
+    annon_data.append(int(hashlib.sha256(person.encode('utf-8')).hexdigest(), 16) % (10 ** 8))
+    i = i + 1
+
+
+with open("../students.annon.json", "w") as f:
+    f.truncate()
+    f.write(json.dumps(str(annon_data), indent=4, sort_keys=True).replace("'", '"').replace('"[', '[').replace(']"', ']'))
+
