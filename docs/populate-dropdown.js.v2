@@ -59,7 +59,7 @@ async function submit_data() {
     dist();
 
     alert("Please press OK to continue to continue to your reward!");
-    if (whois_user == "Milo Banks" || whois_user == "Eli Hatton" || whois_user == "Jack Revoy" || whois_user == "Evan Weinstein" || whois_user == "Teo Welton" || whois_user == "Merrick Davidson" || whois_user == "Henry Erickson" || whois_user == "Isaac Granger" || whois_user == "Ainsley Moore" || whois_user == "Dylan Bookhamer" || whois_user == "Abby Downes" || whois_user == "Monica Fernandez-Esquivas" || whois_user == "Gemma Ciriello" || whois_user == "Elli Ramirez" || whois_user == "Adara Shrestha" || whois_user == "James Obermark" || whois_user == "Kaia Brickson" || whois_user == "Will Damico") {
+    if (whois_user == "Milo Banks" || whois_user == "Eli Hatton" || whois_user == "Jack Revoy" || whois_user == "Evan Weinstein" || whois_user == "Teo Welton" || whois_user == "Merrick Davidson" || whois_user == "Henry Erickson" || whois_user == "Isaac Granger" || whois_user == "Ainsley Moore" || whois_user == "Dylan Bookhamer" || whois_user == "Abby Downes" || whois_user == "Monica Fernandez-Esquivas" || whois_user == "Gemma Ciriello" || whois_user == "Elli Ramirez" || whois_user == "Adara Shrestha" || whois_user == "James Obermark" || whois_user == "Kaia Brickson") {
         window.location.href = "https://www.youtube.com/watch?v=QtBDL8EiNZo"; // Rick roll!
     } else if (whois_user == "Owen Kiel" || whois_user.includes("Henry") || whois_user.includes("Jack")) {
         window.location.href = "https://www.youtube.com/watch?v=Zj7yLvXRDUg"; // Corperate rewarding employees
