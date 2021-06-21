@@ -47,7 +47,7 @@ async function submit_data() {
     }
 
     let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
-    if (findDuplicates(likes).length != 0) { alert("You put in friends that are the same. Please change this!"); }
+    if (findDuplicates(likes).length != 0) { alert("You put in friends that are the same. Please change this!"); return; }
 
     console.log(whois_user + ": " + likes);
 
